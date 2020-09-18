@@ -42,6 +42,19 @@ pre: "<b>1. </b>"                        # <= (string/html) chapter の通し番
 (ここから chapter の中身)
 ```
 
+#### その chapter に属する記事一覧を表示する方法
+
+chapter の _index.md に以下を `{{ 〜 }}` でくくったもの埋め込む
+(ここで `{{ 〜 }}` でくくってしまうと、ここに埋め込まれてしまうので、ごめんなさい)
+```
+% children style="h2" description="false" %
+```
+
+より詳細/具体的な内容は以下をご覧ください。
+* [参考 (demo)](https://learn.netlify.app/en/shortcodes/children/)
+* [参考 (code, RAW を選択するとソースが見られます)](https://github.com/matcornic/hugo-theme-learn/blob/master/exampleSite/content/shortcodes/children/_index.en.md)
+
+
 
 ### エントリに関する tips
 * 新しい記事 (エントリ) を作る
