@@ -7,6 +7,8 @@ weight: 2
 
 ## 記事を書くときに役に立ちそうなこと
 
+---
+
 ### chapter に関する tips
 * 新しい Chapter を作る
 ```sh
@@ -64,6 +66,7 @@ chapter の _index.md に以下を埋め込むことで、その chapter に含�
 * [参考 (code, RAW を選択するとソースが見られます)](https://github.com/matcornic/hugo-theme-learn/blob/master/exampleSite/content/shortcodes/children/_index.en.md)
 
 
+---
 
 ### エントリに関する tips
 * 新しい記事 (エントリ) を作る
@@ -75,6 +78,11 @@ hugo new content/{path/to/entory}/_index.md
 ```sh
 hugo new content/Golang/Hugo/02_tips/_index.md
 ```
+
+ちなみに、どのくらい chapter に属させることができるのか？ (どのくらいネストできるのか？) についてですが、めっちゃできそうです。
+少なくとも、[公式の demo](https://learn.netlify.app/en/shortcodes/children/) を見る限り 5階層はネストできてるっぽいですね。
+
+![nest chapter](./images/nest_chapter.png?width=30pc)
 
 #### エントリの header要素
 * エントリの header要素 (例: この記事)
@@ -123,6 +131,11 @@ content/Golang/Hugo/01_createBlog/
 
 * front-page.png を _index.md に掲載する方法
 ```
-![front-page image](./images/front-page.png?width=30pc)
+![front-page image](./images/front-page.png)
 ```
 を _index.md 内に書けば OK
+
+画像の大きさを指定したい場合は、ファイル名の後ろに `width` というパラメータで値を指定して、渡せばいいみたいです。
+```
+![front-page image](./images/front-page.png?width=30pc)
+```
