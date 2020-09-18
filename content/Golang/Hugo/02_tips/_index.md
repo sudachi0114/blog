@@ -44,13 +44,22 @@ pre: "<b>1. </b>"                        # <= (string/html) chapter の通し番
 
 #### その chapter に属する記事一覧を表示する方法
 
-chapter の _index.md に以下を `{{ 〜 }}` でくくったもの埋め込む
-(ここで `{{ 〜 }}` でくくってしまうと、ここに埋め込まれてしまうので、ごめんなさい)
-```
-% children style="h2" description="false" %
-```
+chapter の _index.md に以下を埋め込むことで、その chapter に含まれる記事の一覧 (list) を配置することができます。
 
-より詳細/具体的な内容は以下をご覧ください。
+    {{%/* children */%}}
+
+
+記事内容の説明 (要約? 概要?) がほしい場合は以下のように指定します。
+
+    {{%/* children description="true" */%}} 
+
+
+また箇条書きの「・」が邪魔だなあ、と思う場合は `div` を指定すれば良さそうです。
+
+    {{%/* children style="div" depth="999" */%}}
+
+
+公式なドキュメントの内容は以下をご覧ください。
 * [参考 (demo)](https://learn.netlify.app/en/shortcodes/children/)
 * [参考 (code, RAW を選択するとソースが見られます)](https://github.com/matcornic/hugo-theme-learn/blob/master/exampleSite/content/shortcodes/children/_index.en.md)
 

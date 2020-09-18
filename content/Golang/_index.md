@@ -9,8 +9,10 @@ pre: "<b>1. </b>"
 # Hello Golang!
 
 This is `Golang` Chapter in my blog.
+
+{{% children %}}
+
 <!-- 
 Table Of Contents
 {{% children style="h2" description="false" %}} 
 -->
-
