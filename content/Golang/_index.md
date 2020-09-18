@@ -8,6 +8,11 @@ pre: "<b>1. </b>"
 
 # Hello Golang!
 
-Table Of Contents
+This is `Golang` Chapter in my blog.
 
+{{% children %}}
+
+<!-- 
+Table Of Contents
 {{% children style="h2" description="false" %}} 
+-->
