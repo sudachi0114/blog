@@ -180,3 +180,9 @@ hugo new {chapter名}/{記事名}.md
 理由としては、記事用にディレクトリを切って置くことで image file などを置くこともできるからいいなーと思っているからです。(予定)
 
 あとは `contents/{chapter名}/{記事名}/_index.md` や `contents/{chapter名}/{記事名}.md` を編集する事でコンテンツを置くことができます。
+
+## Links
+* [HUGOでMarkdownを使った技術ドキュメントの管理が良い](https://www.karakaram.com/hugo-usage/)
+* [Hugo - Content Sections (chapter のネストについて)](https://gohugo.io/content-management/sections/#nested-sections)
+* [hugo-theme-learn demo page](https://learn.netlify.app/en/shortcodes/children/)
+* [hugo-theme-learn repository](https://github.com/matcornic/hugo-theme-learn)
