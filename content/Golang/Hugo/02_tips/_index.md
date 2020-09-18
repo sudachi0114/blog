@@ -79,3 +79,28 @@ weight: 2                        # <= chapter 中のエントリたちのうち�
 
 (ここから記事の内容)
 ```
+
+#### 画像を載せる
+
+```
+![image title](path/to/image/file.png)
+```
+
+例: Hugo でブログ作った記事の場合
+
+* ディレクトリ構成
+```sh
+$ tree content/Golang/Hugo/01_createBlog/
+content/Golang/Hugo/01_createBlog/
+├── _index.md           # <= ここから見た
+└── images
+    └── front-page.png  # <= このファイルまでの相対パスで指定する
+
+1 directory, 2 files
+```
+
+* front-page.png を _index.md に掲載する方法
+```
+![front-page image](./images/front-page.png?width=30pc)
+```
+を _index.md 内に書けば OK
