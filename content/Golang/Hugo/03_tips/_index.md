@@ -12,7 +12,7 @@ weight: 3
 ### chapter に関する tips
 * 新しい Chapter を作る
 ```sh
-hugo new --kind chapter content/{chapter-name}
+hugo new --kind chapter {chapter-name}/_index.md
 ```
 
 
@@ -71,12 +71,16 @@ chapter の _index.md に以下を埋め込むことで、その chapter に含�
 ### エントリに関する tips
 * 新しい記事 (エントリ) を作る
 ```sh
-hugo new content/{path/to/entory}/_index.md
+hugo new {chapter}/{path/to/entory}/_index.md
 ```
 
 例: この記事
 ```sh
-hugo new content/Golang/Hugo/02_tips/_index.md
+hugo new Golang/Hugo/03_tips/_index.md
+# 実際の配置は `content/Golang/Hugo/03_tips/_index.md` ですが
+#   hugo new では、自動的に content 下に配置されるので
+#   hugo new するときは content を path に含めません。
+#   # 含めると、content/content/... となってしまう
 ```
 
 ちなみに、どのくらい chapter に属させることができるのか？ (どのくらいネストできるのか？) についてですが、めっちゃできそうです。
