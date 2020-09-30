@@ -5,7 +5,7 @@ draft: false
 weight: 2
 ---
 
-## python * AI 環境構築 on Ubuntu 18.04
+# python * AI 環境構築 on Ubuntu 18.04
 
 * 前編 (Driver / Library install 編)
     - [後編はこちら (qiita に飛びます) ](https://qiita.com/daichildren98/items/acc1abcca37dfa521fea)
