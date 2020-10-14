@@ -69,7 +69,7 @@ DefaultContentLanguage = "ja"                   # Theme i18n support
         weight = -100
         pre = "home"
     [[menu.main]]
-        identifier = "about-cn"
+        identifier = "about-me"
         name = "About"
         url = "about"
         weight = -90
