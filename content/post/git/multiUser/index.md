@@ -1,11 +1,14 @@
 ---
-title: "複数ユーザ"
+title: "Git で複数ユーザを使い分ける"
 date: 2020-10-14T09:38:49+09:00
-draft: false
-tags: ["git"]
+tags: ["git", "GitHub", "GitLab"]
+categories:
+  - git
+  - github
+  - gitlab
 ---
 
-## Git で複数ユーザを使い分ける
+## Motivation
 
 私は現在学生で、大体個人での活動がメインです。
 
