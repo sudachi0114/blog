@@ -3,6 +3,9 @@ title: "Hugo ではじめる blog 制作"
 date: 2020-09-16T18:29:00+09:00
 draft: false
 weight: 1
+categories:
+  - golang
+  - hugo
 ---
 
 ## Hello, Hugo!
