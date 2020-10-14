@@ -1,11 +1,14 @@
 ---
-title: "[メモ] 役に立ちそうなこと"
+title: "hugo で役に立ちそうなこと"
 date: 2020-09-17T18:41:34+09:00
 draft: false
 weight: 3
+categories:
+  - golang
+  - hugo
 ---
 
-## 記事を書くときに役に立ちそうなこと
+## Hugo で記事を書くときに役に立ちそうなこと
 
 ---
 

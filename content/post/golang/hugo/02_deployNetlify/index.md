@@ -3,6 +3,9 @@ title: "Netlify に deploy しよう"
 date: 2020-09-18T17:25:12+09:00
 draft: false
 weights: 2
+categories:
+  - golang
+  - hugo
 ---
 
 ## Netlify に deploy する方法
