@@ -1,6 +1,6 @@
 ---
 title: "Git: branch delete まとめ"
-date: 2020-10-14T09:38:49+09:00
+date: 2020-10-15T18:38:49+09:00
 tags: ["git", "GitHub", "GitLab"]
 categories:
   - git
