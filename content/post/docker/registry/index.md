@@ -2,6 +2,9 @@
 title: "Docker Registry について"
 date: 2020-10-15T18:43:43+09:00
 draft: false
+categories:
+  - docker
+  - gitlab
 ---
 
 # Docker Registry についてまとめる
