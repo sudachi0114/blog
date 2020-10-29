@@ -17,16 +17,17 @@ categories:
 
 標準だと ↓ こんな感じなのではないでしょうか
 
-```sh
+```
 user@Macbook-Pro:~ $
 
 ```
 
 こんな感じ ↓ にしたいと思います。
 
-```sh
+```
 sudachi@DaiMac:~
 (*'-') < 
+
 ```
 
 
@@ -85,9 +86,10 @@ export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)
 どっかに `\n` を入れると改行できて、fish をお洒落に使いこなされる方の気分になれます(なれません)。
 
 
-さて、これを**もっとかわいく**しましょう
+さて、これを**もっとかわいく**しましょう。
+復讐になりますが、以下のような感じにしたいのでした。
 
-```sh
+```
 sudachi@DaiMac:~
 (*'-') < 
 
@@ -107,7 +109,7 @@ export PS1='\[\033[32m\]\u@\h\[\033[01m\]:\[\033[34m\]\W\[\033[31m\]$(__git_ps1)
 最後の顔のところはシングルコーテーションが入ってしまっているので、
 ちょっと理想からは外れますが、ダブルコーテーションで括って繋げました...
 
-ちなみに Error (exit code が 0 == 正常終了 ) か / そうでないかでプロンプトを変えることもできます。
+ちなみに、処理が正常終了 ( == exit code が 0) か / そうでないか (Error, ここでは、乱暴に exit code 0 以外で決め打ち)でプロンプトを変えることもできます。
 
 
 ```~/.bashrc
@@ -122,12 +124,13 @@ exitstatus() {
 }
 
 export PS1=$PS1'$(exitstatus)'
+
 ```
 
 なんて ~~めんどうな~~ いや、~~物好きな~~ ことをすると
 
 
-```bash
+```
 # 前回正常終了
 sudachi@DaiMac:~
 (*'-') < sl
@@ -136,6 +139,7 @@ sudachi@DaiMac:~
 bash: sl: command not found
 sudachi@DaiMac:~
 (*x_x) < 
+
 ```
 
 という風に分岐できました。**かわいい**。
@@ -190,3 +194,7 @@ sudachi@DaiMac:~
 
 * [Bashのプロンプトに色を付けよう、という話](https://qiita.com/Hiroki_lzh/items/d33184cf5ac9ec92c3a6)
 * [Bash/プロンプトのカスタマイズ](https://wiki.archlinux.jp/index.php/Bash/%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA)
+
+* [.bash_profileと.bashrcのまとめ](https://qiita.com/takutoki/items/021b804b9957fe65e093)
+
+* [ターミナルの表示内容(プロンプト)の変更・カスタマイズ方法まとめ](https://qiita.com/hmmrjn/items/60d2a64c9e5bf7c0fe60)
