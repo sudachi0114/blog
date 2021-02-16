@@ -1,16 +1,16 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'sudachi blog',
+  tagline: 'The tagline of sudachi blog',
+  url: 'https://sudachi0114.github.io/blog',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'sudachi0114',
+  projectName: 'blog',
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Sudachi Blog',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -24,7 +24,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/sudachi0114',
           label: 'GitHub',
           position: 'right',
         },
