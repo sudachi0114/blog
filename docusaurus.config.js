@@ -34,6 +34,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
+          // TODO: ここもリプレイスする (自分の記事を移行してきたら)
           title: 'Docs',
           items: [
             {
@@ -50,16 +51,16 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/RoL0114',
+            },
+            {
+              label: 'Qiita',
+              href: 'https://qiita.com/sudachi0114',
+            },
+            {
+              label: 'Zenn (ToBe...)',
+              href: 'https://zenn.dev/sudachi',
             },
           ],
         },
@@ -72,7 +73,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/sudachi0114',
             },
           ],
         },
