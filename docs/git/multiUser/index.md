@@ -15,30 +15,22 @@ categories:
 
 ## Motivation
 
-私は現在学生で、大体個人での活動がメインです。
+個人用と、アルバイト用で異なる git アカウントを使い分けたい。その切り替え方法の覚書。
 
-そこで個人的に GitHub のアカウントを持っていて、
-普段はそれを使ってソースコードの管理をしています。
+* 個人アカウントは global として登録 (メインアカウント)
+* アルバイト先のプロジェクトでは local の設定で、アカウント情報を上書きする (サブアカとして上書き)
 
-ありがたいことに、この度、インターンシップに参加することとなりました。
-
-インターンでは、インターン用の別アカウントを使う必要がありました。
-
-そこで global に登録している個人アカウントはそのままに、
-インターンのプロジェクトでは local に git(hub) のアカウントをキャッシュ (登録) する、
-ということを行ったので、その方法をメモとして残しておきます。
+という方法で改善を試みた。
 
 ## global なアカウントを設定する
 
-自分がよく使うアカウントは、global にアカウント情報を設定してしまいましょう。
-特に local で設定を書き換えない限り適用される、デフォルト設定みたいなものと思ってもらえればいいと思います。
+自分がよく使うメインアカウントは、global に設定する。
 
+グローバル設定は `~/.gitconfig` に登録される。
 
-global に行った設定は `~/.gitconfig` に登録されます。
+逆に、グローバル設定にしたいことがある場合、このファイルに書けば良い、ということ。
 
-逆に、global に設定したいことがある場合は、このファイルに書いてあげれば良い、ということです。
-
-### ~/.gitconfig にアカウンティングを設定
+### ~/.gitconfig にアカウントを設定
 
 ```sh
 git config --global user.name "{main-user-name}"
@@ -52,12 +44,13 @@ git config --global user.email "{main-user-email@example.com}"
 以下を実行してファイルの中身をチェックします。
 
 ```
-cat ~/.gitconfig
+cat ~/.gitconfig | grep user -A 2
 ```
 
-以下のような部分があれば OK です。
+だいたいこうなっていれば OK.
 
-```~/.gitconfig
+<!-- ~/.gitconfig -->
+```
 [user]
 	name = {main-user-name}
 	email = {main-user-email@example.com}
@@ -66,29 +59,25 @@ cat ~/.gitconfig
 
 ## local アカウントの設定
 
-先ほどの global な設定は、「使用している PC (の自分のアカウント) 全体に対するデフォルト設定」のようなものです。
+ここまでで行なったグローバル設定は「使用している PC (の自分のアカウント) 全体に対するデフォルト設定」のようなもの。
 
-local にアカウントを設定すると、「リポジトリ毎」にアカウントを使い分けられます。
+ローカル設定は、およそ「リポジトリ毎」に登録 (上書き) できる設定だと思えば良さそう。
 
-この「リポジトリはこのアカウント」という使い方ができるということですね。便利。
-
-まずは、手元にあるリポジトリまで移動しましょう。
+リポジトリの下で設定のコマンドを打つので、まずはそこまで移動。
 
 ```
-cd Project/path/to/your/repository
+cd projects/path/to/your/repository
 git config --local user.name "{sub-user-name}"
 git config --local user.email "{sub-user-email@example.com}"
 ```
 
-こちらでも同じく `{sub-user-name}`, `{sub-user-email@example.com}` の方はご自身に合わせて書き換えてください。
+ここでも同じく `{sub-user-name}`, `{sub-user-email@example.com}` の方はご自身に合わせて書き換えてください。
 
 
 ### 設定の確認
 
-さて、`--local` に設定した内容はどこに登録されるのでしょうか?
-
-リポジトリ内の `.git/config` に設定されます。
-覗いてみましょう。
+`--local` に設定した内容は、リポジトリ内の `.git/config` に設定される。
+ここを覗いて確認してみる。
 
 ```sh
 cat .git/config
@@ -106,19 +95,16 @@ cat .git/config
 
 ## 実行後の確認
 
-設定ファイルを覗くことにより、確認を行いました。
-
-一応、(push などする前に) 手元で「自分が望んだ設定になっているか」確認をしておくと無難だと思います。
+設定ファイルをみる限りでは、確認できましたが、
+一応 (push などする前に) 手元で「自分が望んだ設定になっているか」確認をしておくと無難だと思います。
 
 ```sh
 git log
 ```
 
-を行うと、
-
 ```
 commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-Author: user-name <email@example.com>  # <= ここで確認できます
+Author: user-name <email@example.com>  # <= ここで確認できる
 Date:   Xxx Xxx 00 00:00:00 2016 +0000
 
     add: add 内容
