@@ -3,15 +3,14 @@ id: git-multiUser
 title: "Git で複数ユーザを使い分ける"
 sidebar_label: "Git で複数ユーザを使い分ける"
 slug: git/multiUser/
-
-tags: ["git", "GitHub", "GitLab", "たぶん、ここから下は意味がない"]
-date: 2020-10-14T09:38:49+09:00
-categories:
+hide_table_of_contents: false
+keywords:
   - git
   - github
   - gitlab
-
 ---
+
+<!-- date: 2020-10-14T09:38:49+09:00 -->
 
 ## Motivation
 
