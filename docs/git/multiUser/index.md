@@ -31,7 +31,7 @@ keywords:
 
 ### ~/.gitconfig にアカウントを設定
 
-```sh
+```shell
 git config --global user.name "{main-user-name}"
 git config --global user.email "{main-user-email@example.com}"
 ```
@@ -42,7 +42,7 @@ git config --global user.email "{main-user-email@example.com}"
 
 以下を実行してファイルの中身をチェックします。
 
-```
+```shell
 cat ~/.gitconfig | grep user -A 2
 ```
 
@@ -64,7 +64,7 @@ cat ~/.gitconfig | grep user -A 2
 
 リポジトリの下で設定のコマンドを打つので、まずはそこまで移動。
 
-```
+```shell
 cd projects/path/to/your/repository
 git config --local user.name "{sub-user-name}"
 git config --local user.email "{sub-user-email@example.com}"
@@ -78,13 +78,14 @@ git config --local user.email "{sub-user-email@example.com}"
 `--local` に設定した内容は、リポジトリ内の `.git/config` に設定される。
 ここを覗いて確認してみる。
 
-```sh
-cat .git/config
+```shell
+cat .git/config | grep user -A 2
 ```
 
 以下のような部分があれば OK です。
 
-```.git/config
+<!-- .git/config -->
+```
 [user]
 	name = {sub-user-name}
 	email = {sub-user-email@example.com}
@@ -97,7 +98,7 @@ cat .git/config
 設定ファイルをみる限りでは、確認できましたが、
 一応 (push などする前に) 手元で「自分が望んだ設定になっているか」確認をしておくと無難だと思います。
 
-```sh
+```shell
 git log
 ```
 
@@ -106,7 +107,7 @@ commit XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 Author: user-name <email@example.com>  # <= ここで確認できる
 Date:   Xxx Xxx 00 00:00:00 2016 +0000
 
-    add: add 内容
+    commit したときのコメント
 ```
 
 こんな感じで、「どのアカウントを使っているか」を見ることができます。
