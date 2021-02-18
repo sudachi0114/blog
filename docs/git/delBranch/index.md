@@ -2,7 +2,6 @@
 id: git-delBranch
 title: "Git: branch delete まとめ"
 sidebar_label: "Git: branch delete まとめ"
-slug: git/delBranch/
 hide_table_of_contents: false
 keywords:
   - git

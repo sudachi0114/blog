@@ -2,7 +2,6 @@
 id: git-multiUser
 title: "Git で複数ユーザを使い分ける"
 sidebar_label: "Git で複数ユーザを使い分ける"
-slug: git/multiUser/
 hide_table_of_contents: false
 keywords:
   - git
