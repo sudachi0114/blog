@@ -2,7 +2,6 @@
 id: infra-apacheServer
 title: "Apache サーバについてのまとめ"
 sidebar_label: "apache まとめ"
-slug: infra/apacheServer/
 hide_table_of_contents: false
 keywords:
   - infra
