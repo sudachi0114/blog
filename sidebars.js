@@ -6,6 +6,7 @@ module.exports = {
     infra: [
       {
         apache:['infra/apacheServer/infra-apacheServer'],
+        samba:['infra/sambaServer/infra-sambaServer'],
       },
     ],
   },
