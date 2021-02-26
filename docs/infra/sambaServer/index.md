@@ -64,6 +64,33 @@ vi /etc/samba/smb.conf
 
 <!-- TODO: ここにファイルの編集箇所 && 内容をわかりやすい感じで書く -->
 
+
+### デーモンの再起動など
+
+* 設定を変更したので、`smbd` を再起動する
+
+```shell
+# ubuntu 16.04 or later (systemctl を用いる場合)
+systemctl restart smbd
+
+# マシンが起動されたときに、smbd も一緒に起動する設定
+systemctl enable smbd
+
+# check
+systemctl status smbd
+```
+
+```shell
+# ubuntu 14.04 までなど (service を用いる場合)
+service smbd restart
+
+# 自動起動設定
+service smbd enable
+```
+
+ここまで行えば、同一ネットワークに接続している PC から `smb://"ip-address"` にアクセスすると、ファイルサーバーとして使うことが出来る。
+
+
 <!--
 
 TODO: ファイヤーウォールを有効化したときの場合も検証する
