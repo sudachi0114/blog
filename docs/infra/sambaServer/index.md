@@ -52,6 +52,36 @@ mkdir /home/share
 vi /etc/samba/smb.conf
 ```
 
+* 変更箇所はおよそ以下の通り (5箇所)
+
+```conf
+# /etc/samba/smb.conf (途中省略してあります, 行数はおよその目安です)
+
+[global]
+# (*) 25行目: 以下2行追記 (windows からのアクセスがなければ、多分2行目はいらない??)
+unix charset = UTF-8
+dos charset = CP932
+
+# (*) 32行目: 必要があれば、workgroup もいじるらしい。(今回は特にいじってない)
+   workgroup = WORKGROUP
+
+# (*) 43行目: ここのコメントアウトを取る & アクセスを許可する ip : 192.168.1.0/24 を追記
+   interfaces = 127.0.0.0/8 192.168.1.0/24 eth0
+
+# (*) 51行目: ここのコメントアウトを取る & 2行目を追記
+   bind interfaces only = yes
+   map to guest = Bad User
+
+# (*) 最終行: 共有フォルダの設定を追記
+[Share]
+   path = /home/share
+   writable = yes
+   guest ok = yes
+   guest only = yes
+   create mode = 0777
+   directry mode = 0777
+```
+
 
 ### the place of log files
 ログファイルはここにあるそうです ⬇️
