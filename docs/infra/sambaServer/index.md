@@ -82,6 +82,7 @@ dos charset = CP932
    directry mode = 0777
 ```
 
+<!-- TODO: ここにファイルの編集箇所 && 内容をわかりやすい感じで書く -->
 
 ### the place of log files
 ログファイルはここにあるそうです ⬇️
@@ -90,9 +91,6 @@ dos charset = CP932
 # /etc/samba/smb.conf に書かれている
 /var/log/samba/log.%m
 ```
-
-
-<!-- TODO: ここにファイルの編集箇所 && 内容をわかりやすい感じで書く -->
 
 
 ### デーモンの再起動など
@@ -122,7 +120,6 @@ service smbd enable
 
 
 <!--
-
 TODO: ファイヤーウォールを有効化したときの場合も検証する
 :::note
 
@@ -133,7 +130,6 @@ ufw allow 80
 ```
 
 :::
-
 -->
 
 ### Links (ubuntu)
