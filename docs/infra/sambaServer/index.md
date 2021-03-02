@@ -33,7 +33,7 @@ apt install -y samba
 # installed?
 dpkg -l | grep -i samba
 
-# process?
+# process (systemctl start smbd してないと出てこない)
 ps -ef | grep -i samba
 ```
 
@@ -78,8 +78,6 @@ dos charset = CP932
    writable = yes
    guest ok = yes
    guest only = yes
-   create mode = 0777
-   directry mode = 0777
 ```
 
 <details>
@@ -340,8 +338,6 @@ dos charset = CP932
    writable = yes
    guest ok = yes
    guest only = yes
-   create mode = 0777
-   directry mode = 0777
 ```
 
 </details>
