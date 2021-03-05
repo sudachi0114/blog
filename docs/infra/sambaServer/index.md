@@ -346,6 +346,9 @@ dos charset = CP932
 
 </details>
 
+
+### 設定ファイルのバリデーション
+
 `testparm` というコマンドで、設定ファイル `smb.conf` のバリデーションが行えるらしい。
 
 ```
@@ -353,7 +356,7 @@ testparm
 
 # 実行結果
 Load smb config files from /etc/samba/smb.conf
-Loaded services file OK.    # <= ここが出て来てればたぶん OK
+Loaded services file OK.    # <= >> ここが出て来てればたぶん OK <<
 Server role: ROLE_STANDALONE
 
 Press enter to see a dump of your service definitions
