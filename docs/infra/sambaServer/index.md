@@ -34,7 +34,7 @@ apt install -y samba
 dpkg -l | grep -i samba
 
 # process (systemctl start smbd してないと出てこない)
-ps -ef | grep -i samba
+ps -ef | grep -i smbd
 ```
 
 
