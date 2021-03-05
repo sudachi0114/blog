@@ -342,6 +342,36 @@ dos charset = CP932
 
 </details>
 
+`testparm` というコマンドで、設定ファイル `smb.conf` のバリデーションが行えるらしい。
+
+```
+testparm
+
+# 実行結果
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.    # <= ここが出て来てればたぶん OK
+Server role: ROLE_STANDALONE
+
+Press enter to see a dump of your service definitions
+
+# Global parameters
+[global]
+	bind interfaces only = Yes
+	dos charset = CP932
+	interfaces = 127.0.0.0/8 192.168.1.0/24 eth0
+
+...
+
+[Share]  # ここに共有フォルダの設定が出てくる
+	create mask = 0644
+	guest ok = Yes
+	guest only = Yes
+	path = /home/share
+	read only = No
+
+
+```
+
 
 ### the place of log files
 ログファイルはここにあるそうです ⬇️
@@ -394,3 +424,5 @@ ufw allow 445
 * [Sambaの環境構築手順#3.4 ポート番号の開放](https://qiita.com/hana_shin/items/e768ef63bdeeef3ada39#34-%E3%83%9D%E3%83%BC%E3%83%88%E7%95%AA%E5%8F%B7%E3%81%AE%E9%96%8B%E6%94%BE)
 
 * [Sambaを導入する理由](https://thinkit.co.jp/free/compare/3/1/1.html)
+
+* [Sambaでファイルサーバーを構築しよう](https://www.atmarkit.co.jp/ait/articles/1612/01/news184.html)
