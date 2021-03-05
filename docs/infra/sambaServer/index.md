@@ -351,10 +351,14 @@ dos charset = CP932
 
 `testparm` というコマンドで、設定ファイル `smb.conf` のバリデーションが行えるらしい。
 
-```
+```shell
 testparm
+```
 
-# 実行結果
+
+* 実行結果
+
+```
 Load smb config files from /etc/samba/smb.conf
 Loaded services file OK.    # <= >> ここが出て来てればたぶん OK <<
 Server role: ROLE_STANDALONE
