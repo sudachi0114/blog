@@ -78,6 +78,8 @@ dos charset = CP932
    writable = yes
    guest ok = yes
    guest only = yes
+   create mode = 0644
+   directory mode = 0755
 ```
 
 <details>
@@ -338,6 +340,8 @@ dos charset = CP932
    writable = yes
    guest ok = yes
    guest only = yes
+   create mode = 0644
+   directory mode = 0755
 ```
 
 </details>
