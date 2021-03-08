@@ -19,7 +19,7 @@ cf. [Smb | Samba とは](https://ja.wikipedia.org/wiki/Samba)
 簡単にまとめると **「Unix/Linux のサーバに、
 Windows のファイルサーバのような振る舞いをさせるためのソフトウェア」** だと思っている。
 
-### install
+## install
 
 ```shell
 apt update
@@ -27,7 +27,7 @@ apt update
 apt install -y samba
 ```
 
-#### check installed and process works (やらなくても良)
+### check installed and process works (やらなくても良)
 
 ```shell
 # installed?
@@ -38,7 +38,7 @@ ps -ef | grep -i smbd
 ```
 
 
-### configuration
+## configuration
 
 * 共有ファイルの入るディレクトリを作成
 
@@ -393,7 +393,7 @@ Press enter to see a dump of your service definitions
 ```
 
 
-### デーモンの再起動など
+## デーモンの再起動など
 
 * 設定を変更したので、`smbd` を再起動する
 
