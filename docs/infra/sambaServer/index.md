@@ -429,6 +429,71 @@ ufw allow 445
 
 :::
 
+## Samba on openvpn
+Samba を OpenVPN 越しに利用しようとしたら、しばらくアクセスできずに色々手間取ったのでメモ。
+
+```
+#### Networking ####
+
+# The specific set of interfaces / networks to bind to
+# This can be either the interface name or an IP address/netmask;
+# interface names are normally preferred
+;   interfaces = 127.0.0.0/8 192.168.3.0/26 172.16.21.0/24 eth0
+;   interfaces = 127.0.0. 172.16.21.
+
+   hosts allow = 127. 172.16.21.
+```
+
+Networking の設定を `interfaces` ではなく、`hosts allow` で行うと良いっぽい。
+(詳細は未だよくわかっていない..)
+
+
+### ポートアクセスの確認
+
+VPN 経由での利用の際、
+「Samba のパッケージはインストールできている。プロセスも動いている。
+ファイアウォールでもポートを開けて通信を許可している。
+VPN を通して通信も確立されている..あとはどうしたら..」
+という状態であった。
+
+最終的には上記のように、ネットワークの設定を見直したら利用できるようになったのだが、
+その際の確認手段として `telnet` での疎通の確認が有効であったので記録する。
+
+```shell
+telnet {{ip address}} {{PORT No}}
+```
+
+以下のようになれば、利用可能である。
+
+```shell
+(*'-') < telnet 172.16.21.xxx 445
+Trying 172.16.21.xxx...
+Connected to 172.16.21.xxx.
+Escape character is '^]'.
+
+# 抜けるには
+# Ctrl-] を押したあと、Ctrl-C.
+```
+
+ちなみにダメな時は以下のようになる
+
+* firewall で弾かれているとき
+
+```shell
+(;x_x) < telnet 172.16.21.xxx 445
+Trying 172.16.21.xxx...
+telnet: connect to address 172.16.21.xxx: Operation timed out
+telnet: Unable to connect to remote host
+```
+
+* Samba 関連で弾かれているとき
+
+```
+(;x_x) < telnet 172.16.21.xxx 445
+Trying 172.16.21.xxx...
+telnet: connect to address 172.16.21.xxx: Connection refused
+telnet: Unable to connect to remote host
+```
 
 ### Links (ubuntu)
 * [Ubuntuでファイルサーバーをたてる（Samba）](https://qiita.com/msrks/items/1385cf13258dd1a0da08)
