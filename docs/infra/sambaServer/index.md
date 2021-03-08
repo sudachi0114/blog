@@ -501,7 +501,7 @@ telnet: connect to address 172.16.21.xxx: Connection refused
 telnet: Unable to connect to remote host
 ```
 
-### Links (ubuntu)
+## Links (ubuntu)
 * [Ubuntuでファイルサーバーをたてる（Samba）](https://qiita.com/msrks/items/1385cf13258dd1a0da08)
 * [Sambaの環境構築手順#3.4 ポート番号の開放](https://qiita.com/hana_shin/items/e768ef63bdeeef3ada39#34-%E3%83%9D%E3%83%BC%E3%83%88%E7%95%AA%E5%8F%B7%E3%81%AE%E9%96%8B%E6%94%BE)
 
