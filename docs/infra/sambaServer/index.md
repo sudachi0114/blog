@@ -423,8 +423,14 @@ service smbd enable
 
 ファイヤーウォールを有効化している場合は、`445`番ポートを開けるのを忘れずに 👇
 
-```sh
+```shell
 ufw allow 445
+```
+
+こちらでも可 (どちらか一方で良い)
+
+```shell
+ufw allow Samba
 ```
 
 :::
