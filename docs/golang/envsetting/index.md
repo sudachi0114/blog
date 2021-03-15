@@ -29,6 +29,76 @@ go version go1.15.2 darwin/amd64
 
 * goenv
   - github からソースを落としてくるやり方と、brew で入れるやり方があるけど、github から落としてくる方がおすすめ (goenv の公式もそっちを推奨してる)
+  - 以下、[ブログ](https://camonowarehouse.hatenablog.jp/entry/2020/10/10/182430) からの移植
+
+---
+
+Homebrew でもインストールできるのですが、最新版よりかなり遅れたバージョンしか使えないので、私は [公式 github の Installation guide](https://github.com/syndbg/goenv/blob/master/INSTALL.md)に従う方法をお勧めします。
+
+```shell
+# basic github checkout (推奨)
+git clone https://github.com/syndbg/goenv.git ~/.goenv
+
+# Homebrew を用いたインストール (非推奨)
+brew install goenv
+```
+
+「goenv の」PATH を通す。
+
+```shell
+echo 'export GOENV_ROOT="$HOME/.goenv"' >> ~/.bashrc
+echo 'export PATH="$GOENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(goenv init -)"' >> ~/.bashrc
+exec $SHELL -l
+```
+
+「go (関連) の」PATH を通す
+
+```shell
+echo 'export GOPATH="${HOME}/go"' >> ~/.bashrc
+echo 'export GOBIN="$GOPATH/bin"' >> ~/.bashrc
+echo 'export PATH="$GOBIN:$PATH"' >> ~/.bashrc
+echo 'export GO111MODULE=on' >> ~/.bashrc
+```
+
+(私は PATH を全て `~/.bashrc` で管理しているので、上記のようにしています。)
+
+
+
+仮想環境の作成
+
+```shell
+# go の version を指定してインストール
+goenv install 1.15.2
+
+# local に go の version を設定
+goenv local 1.15.2
+```
+
+確認
+
+```shell
+# 以下 2つが一致しているかをチェック
+cat .go-version
+go version
+```
+
+* [Goの環境構築方法](https://qiita.com/k_shibusawa/items/7c35b083addd2b557f96)
+* [MacでGoの環境構築 (brew install go - goen 使わないバージョン) ](https://qiita.com/yukinagae/items/9c20c67003020ef08a8c)
+* [goenv global とか](https://blog.bltinc.co.jp/entry/2019/06/27/010812)
+
+* [【Go】goenvを使ってGo1.13.4の環境構築](https://qiita.com/seicode/items/9ffce10086f0646379a1)
+
+* [goenv リポジトリ](https://github.com/syndbg/goenv)
+
+プロジェクト事始め
+
+* [Mac OS X で Golang に入門してみる](https://blog.amedama.jp/entry/2015/10/06/231038)
+* [[Go] MacでGo言語環境構築](https://qiita.com/koralle/items/7a16772ad1d2e2e34682)
+
+---
+
+* [公式](https://golang.org/) からインストーラを落としてきてインストールする方法
 
 一番単純なのは `brew` で入れちゃうのだと思う..
 個人的には仮想環境でバージョン切り替えて使いたかったので、`goenv` をインストールして使っている。
