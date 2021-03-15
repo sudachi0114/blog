@@ -20,7 +20,7 @@ Go 言語の開発環境を (macOS 上に) 構築するときの覚え書きと�
 
 * brew 
 * goenv
-* 
+  - github からソースを落としてくるやり方と、brew で入れるやり方があるけど、github から落としてくる方がおすすめ (goenv の公式もそっちを推奨してる)
 
 * 一番単純なのは `brew` で入れちゃうのだと思う
 
@@ -29,6 +29,43 @@ $ brew install go
 
 $ go version
 go version go1.15.2 darwin/amd64
+```
+
+## 実行方法
+
+以下のような構成を考える。
+
+`go run|build` をするときは、main パッケージの、main 関数が必要 (を探しにいく) だと思っている。
+
+```shell
+./helloworld  # <= 作業ディレクトリはここ
+└── main.go
+
+0 directories, 1 file
+```
+
+```go
+// main.go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello world!")
+}
+```
+
+```shell
+# 実行 ($GOPATH に関係なく、以下で実行できるはず)
+$ go run main.go
+Hello world!
+
+# ビルド ($GOPATH に関係なく、以下で実行できるはず)
+$ go build
+$ ./helloworld
+Hello world!
 ```
 
 ## Go に関する環境変数などの確認
@@ -63,7 +100,7 @@ GOARCH="amd64"
 で頑張れば、基本どこでも OK そう。
 
 
-##　パッケージについて
+## パッケージについて
 
 パッケージ管理ツールとかいろいろあるけど、
 最近だと `go mod tidy` が最強だと思う..
