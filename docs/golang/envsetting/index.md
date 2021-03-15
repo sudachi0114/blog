@@ -173,6 +173,12 @@ func Sub(a, b int) int {
 }
 ```
 
+:::tip
+
+外部から参照したい関数や変数などは、先頭を大文字にしておく必要がある
+
+:::
+
 ### GOPATH 配下でないときの go module
 
 * `GOPATH=$HOME/go` ( = `/Users/sudachi/go` )
@@ -247,3 +253,5 @@ algo/calc.go: Sub(5, 8) =  -3
 ## 参考
 * [The Go Programming Language](https://golang.org/)
 * [A Tour of Go](https://go-tour-jp.appspot.com/welcome/1)
+
+* [golang パッケージについてざっくり理解する。(古い方 (go version < 1.11) の書き方なので注意!!)](https://qiita.com/pei0804/items/5f28b42d01fcadb3f765)
