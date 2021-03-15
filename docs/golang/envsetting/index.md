@@ -323,6 +323,90 @@ algo/calc.go: Add(2, 3) =  5
 algo/calc.go: Sub(5, 8) =  -3
 ```
 
+### modules ができる前の話 (?)
+
+go module ができたのは、どうやら 1.11 以降のようです。
+
+それまでは、相対パスでインポートができてました。以下の例で試してみます。
+
+```shell
+# $ rm .go-version
+
+$ goenv install 1.9.7
+
+$ goenv local 1.9.7
+
+$ go version
+go version go1.9.7 darwin/amd64
+```
+
+このころはまだ `go mod` が使えません。
+
+```shell
+$ go mod
+go: unknown subcommand "mod"
+Run 'go help' for usage.
+```
+
+```go
+// main.go
+package main
+
+import (
+	"fmt"
+
+	"./algo"  // <= ここ、相対パスでインポート
+)
+
+func main() {
+	fmt.Println("Hello world!")
+	fmt.Println("algo/calc.go: Add(2, 3) = ", algo.Add(2, 3))
+	fmt.Println("algo/calc.go: Sub(5, 8) = ", algo.Sub(5, 8))
+}
+```
+
+```go
+// algo/calc.go
+package algo
+
+func Add(a int, b int) int {
+	return a + b
+}
+
+func Sub(a, b int) int {
+	return a - b
+}
+```
+
+```shell
+$ go run main.go 
+Hello world!
+algo/calc.go: Add(2, 3) =  5
+algo/calc.go: Sub(5, 8) =  -3
+```
+
+* お掃除
+
+```shell
+$ goenv uninstall 1.9.7
+```
+
+<!-- 
+ちなみに、1.11 以上で相対パスでインポートしようとすると、以下のように怒られます (´・ω・｀)
+⬆️ 試しにやってみたら、怒られなかった (´・ω・｀) < なんで??
+
+```shell
+# $ goenv local 1.15.2
+
+$ go version
+go version go1.15.2 darwin/amd64
+
+$ go run main.go 
+build command-line-arguments: cannot find module for path _/Users/sudachi/Desktop/helloworld/algo
+```
+-->
+
+
 ## 参考
 * [The Go Programming Language](https://golang.org/)
 * [A Tour of Go](https://go-tour-jp.appspot.com/welcome/1)
