@@ -9,20 +9,16 @@ keywords:
   - 環境構築
 ---
 
-## Go 環境構築
+# Go 環境構築
 
 Go 言語の開発環境を (macOS 上に) 構築するときの覚え書きと、
 その中で得た知見のメモ。
 
-### Install
+## Install
 
 いろいろ方法がある..
 
 * brew 
-* goenv
-  - github からソースを落としてくるやり方と、brew で入れるやり方があるけど、github から落としてくる方がおすすめ (goenv の公式もそっちを推奨してる)
-
-* 一番単純なのは `brew` で入れちゃうのだと思う
 
 ```shell
 $ brew install go
@@ -30,6 +26,13 @@ $ brew install go
 $ go version
 go version go1.15.2 darwin/amd64
 ```
+
+* goenv
+  - github からソースを落としてくるやり方と、brew で入れるやり方があるけど、github から落としてくる方がおすすめ (goenv の公式もそっちを推奨してる)
+
+一番単純なのは `brew` で入れちゃうのだと思う..
+個人的には仮想環境でバージョン切り替えて使いたかったので、`goenv` をインストールして使っている。
+
 
 ## 実行方法
 
