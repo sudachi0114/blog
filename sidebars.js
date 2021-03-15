@@ -2,6 +2,7 @@ module.exports = {
   someSidebar: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
     Features: ['mdx'],
+    golang: ['golang/envsetting/golang-envsetting'],
     git: ['git/multiUser/git-multiUser', 'git/delBranch/git-delBranch'],
     infra: [
       {
