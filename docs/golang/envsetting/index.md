@@ -173,6 +173,76 @@ func Sub(a, b int) int {
 }
 ```
 
+### GOPATH 配下でないときの go module
+
+* `GOPATH=$HOME/go` ( = `/Users/sudachi/go` )
+
+以下のプロジェクトはデスクトップ下に作ったので、`$GOPATH` 配下ではない。
+
+```shell
+/Users/sudachi/Desktop/helloworld  # デスクトップの下に helloworld がある
+├── algo
+│   └── calc.go
+├── go.mod
+└── main.go
+
+1 directory, 3 files
+```
+
+* go mod 以下を実行
+
+```shell
+# 実行時の作業ディレクトリは /Users/sudachi/Desktop/helloworld
+go mod init hoge
+```
+
+すると、以下のような `go.mod` ファイルが作成される
+
+```go
+// go.mod (これも、自分で書いたわけではない。go mod init hoge すると生成される)
+module hoge
+
+go 1.15
+```
+
+すると、`/Users/sudachi/Desktop/helloworld` 以下にあるパッケージは `hoge/XXX` という形で参照できる。
+
+```go
+// main.go
+package main
+
+import (
+	"fmt"
+
+	"hoge/algo"  // <= ここの参照の仕方が変わった。
+)
+
+func main() {
+	fmt.Println("Hello world!")
+	fmt.Println("algo/calc.go: Add(2, 3) = ", algo.Add(2, 3))
+	fmt.Println("algo/calc.go: Sub(5, 8) = ", algo.Sub(5, 8))
+}
+```
+
+```go
+// algo/calc.go
+package algo
+
+func Add(a int, b int) int {
+	return a + b
+}
+
+func Sub(a, b int) int {
+	return a - b
+}
+```
+
+```shell
+$ go run main.go 
+Hello world!
+algo/calc.go: Add(2, 3) =  5
+algo/calc.go: Sub(5, 8) =  -3
+```
 
 ## 参考
 * [The Go Programming Language](https://golang.org/)
