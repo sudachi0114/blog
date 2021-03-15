@@ -112,6 +112,68 @@ GOARCH="amd64"
 -> package module という単位で管理する、という話
 
 
+* 以下のようなプロジェクトを考える。
+
+<!-- go mod って別記事にした方がいいかも.. -->
+
+```
+./helloworld
+├── algo
+│   └── calc.go
+├── go.mod
+└── main.go
+
+1 directory, 3 files
+```
+
+```go
+// go.mod 
+//  helloworld ディレクトリで $ go mod init しただけ (自分で書いたところはない)
+module github.com/sudachi0114/helloworld
+
+go 1.15
+```
+
+このとき、`$GOPATH` 配下だと、`go mod init` で自動的に
+`$GOPATH/src` 以下から、現在の作業ディレクトリまでのパスが module として認識される。
+
+逆を言えば、`$GOPATH` 配下でなくても `go mod init hoge` とかすれば、
+module 名が `hoge` になって、`hoge/algo` で algo パッケージをインポートできるようになる、ということなのです。
+
+以下で別例を与える。
+
+```go
+// main.go
+package main
+
+import (
+	"fmt"
+
+	"github.com/sudachi0114/helloworld/algo"
+)
+
+func main() {
+	fmt.Println("Hello world!")
+	fmt.Println("algo/calc.go: Add(2, 3) = ", algo.Add(2, 3))
+	fmt.Println("algo/calc.go: Sub(5, 8) = ", algo.Sub(5, 8))
+}
+```
+
+```go
+// algo/calc.go
+
+package algo
+
+func Add(a int, b int) int {
+	return a + b
+}
+
+func Sub(a, b int) int {
+	return a - b
+}
+```
+
+
 ## 参考
 * [The Go Programming Language](https://golang.org/)
 * [A Tour of Go](https://go-tour-jp.appspot.com/welcome/1)
