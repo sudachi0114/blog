@@ -10,5 +10,6 @@ module.exports = {
         samba:['infra/sambaServer/infra-sambaServer'],
       },
     ],
+    markdown: ['markdown/pulldown/markdown-pulldown'],
   },
 };
