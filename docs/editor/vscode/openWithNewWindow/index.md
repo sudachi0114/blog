@@ -34,6 +34,18 @@ VSCode をいつも新しいウィンドウで起動できる設定を行う。
 Mac でいう、「Command-q で終了した後に、立ち上げる」みたいな状況をさします。
 
 
+---
+
+### setting.json での設定
+
+```json
+"window.openWithoutArgumentsInNewWindow": "on",
+"window.restoreWindows": "none"
+```
+
+---
+
+
 ### Setting からの設定
 
 * まず、VSCode を起動し `Settings` を開きます。
