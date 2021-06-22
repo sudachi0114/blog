@@ -9,13 +9,12 @@ module.exports = {
       'git/ignoreNoExtFiles/git-ignore-binary',
       'git/fileHistory/git-file-history'],
     infra: [{
-        apache:['infra/apacheServer/infra-apacheServer'],
-        samba:['infra/sambaServer/infra-sambaServer'],
-      },],
+      apache:['infra/apacheServer/infra-apacheServer'],
+      samba:['infra/sambaServer/infra-sambaServer'],
+    },],
     markdown: ['markdown/pulldown/markdown-pulldown'],
     editor: [{
       vscode: ['editor/vscode/openWithNewWindow/editor-vscode-openwithnewwindow']
-
     },],
   },
 };
