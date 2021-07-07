@@ -345,4 +345,10 @@ tmpfs           395M  564K  394M   1% /run
 
 これで KVM マシンのボリュームの拡張は無事完了です。
 
+
 ## Links
+
+* [mastodonサーバのSSDを大容量の物に変更しました。（Linuxの大容量SSDへの移行）](https://www.tsukiyono.blue/blog/2020/01/mstdn_maintenance_disk.html)
+
+* [KVMの仮想ディスクを拡張する方法](https://qiita.com/nouphet/items/fea026c03ca86ec54111)
+* [fdiskコマンドでパーティション分割](https://qiita.com/r_saiki/items/894de9660607af22ab2e)
