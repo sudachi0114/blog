@@ -11,6 +11,7 @@ module.exports = {
     infra: [{
       apache:['infra/apacheServer/infra-apacheServer'],
       samba:['infra/sambaServer/infra-sambaServer'],
+      kvm:['infra/kvm/expand_volume/infra-kvm-expand-volume'],
     },],
     markdown: ['markdown/pulldown/markdown-pulldown'],
     editor: [{
