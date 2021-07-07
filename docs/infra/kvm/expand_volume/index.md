@@ -68,4 +68,79 @@ $ virsh define /etc/libvirt/qemu/{vm-name}.xml
 $ virsh start {vm-name}
 ```
 
+---
+
+## ホストPCで仮想ディスクのボリュームを増やす
+
+まずは、ホスト PC での作業になります。
+KVM を停止し、仮想ディスクのサイズを拡張します。
+
+```shell
+# 仮想マシン内で、シャットダウンするか
+$ sudo shutdown now
+
+# ホスト側から停止するか
+$ virsh shutdown {vm-name}
+```
+
+`{vm-name}.img` の部分はご自身のディスク名に置き換えてください。
+
+また、カレント下になくても、ディスクがある場所へのパスを指定すれば OK です。
+
+ここでは、容量を `30GB` 追加しようと思います。
+
+```shell
+# 仮想ディスクの情報を表示 (ここで現在の容量が見られます)
+$ qemu-img info /path/to/image/{vm-name}.img
+
+# 仮想ディスクの容量を拡張
+$ qemu-img resize {vm-name}.img +30G
+
+# 仮想ディスクの情報を再度表示して確認
+$ qemu-img info {vm-name}.img
+```
+
+例:
+
+* 状態確認
+
+```shell
+$ qemu-img info /var/kvm/images/sample.img
+image: /var/kvm/images/sample.img
+file format: qcow2
+virtual size: 30G (32212254720 bytes)
+disk size: 3.7G
+cluster_size: 65536
+Format specific information:
+    compat: 1.1
+    lazy refcounts: true
+    refcount bits: 16
+    corrupt: false
+```
+
+* 拡張
+
+```shell
+$ qemu-img resize /var/kvm/images/sample.img +30G
+Image resized.
+```
+
+* チェック
+
+```shell
+$ qemu-img info /var/kvm/images/sample.img
+image: /var/kvm/images/sample.img
+file format: qcow2
+virtual size: 60G (64424509440 bytes)  # <= ここが 30G から 60G に増えました。
+disk size: 3.7G
+cluster_size: 65536
+Format specific information:
+    compat: 1.1
+    lazy refcounts: true
+    refcount bits: 16
+    corrupt: false
+```
+
+
+
 ## Links
