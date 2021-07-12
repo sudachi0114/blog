@@ -43,6 +43,14 @@ $ ntpdate ntp.nict.jp
 $ date
 Mon Jul 12 18:39:27 JST 2021
 
+# date コマンドは + でフォーマットを指定することもできる
+$ date  +%Y%m%d
+20210712
+
+$ date  +%Y/%m/%d
+2021/07/12
+
+
 # カレンダー
 $ cal
      July 2021        
