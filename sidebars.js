@@ -9,6 +9,7 @@ module.exports = {
       'git/ignoreNoExtFiles/git-ignore-binary',
       'git/fileHistory/git-file-history'],
     infra: [{
+      ubuntu:['infra/ubuntu/set-timezone/ubuntu-set-timezone'],
       apache:['infra/apacheServer/infra-apacheServer'],
       samba:['infra/sambaServer/infra-sambaServer'],
       kvm:['infra/kvm/expand_volume/infra-kvm-expand-volume'],
