@@ -12,7 +12,9 @@ module.exports = {
       ubuntu:['infra/ubuntu/set-timezone/ubuntu-set-timezone'],
       apache:['infra/apacheServer/infra-apacheServer'],
       samba:['infra/sambaServer/infra-sambaServer'],
-      kvm:['infra/kvm/expand_volume/infra-kvm-expand-volume'],
+      kvm:['infra/kvm/expand_volume/infra-kvm-expand-volume',
+           'infra/kvm/notes/infra-kvm-notes',
+      ],
     },],
     markdown: ['markdown/pulldown/markdown-pulldown'],
     editor: [{
